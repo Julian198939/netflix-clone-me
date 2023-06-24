@@ -53,7 +53,7 @@ export default React.memo(function Card({ movieData }) {
             <div className="genres">
               <ul>
                 {movieData.genres.map((genre) => {
-                  <li>{genre}</li>;
+                  return <li key={genre}>{genre}</li>;
                 })}
               </ul>
             </div>
