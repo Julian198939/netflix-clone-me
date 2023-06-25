@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import TopNav from "../components/TopNav";
-import Card from "../components/Card";
+
 import { fetchMovies, getGenres } from "../store";
 import SliderContainer from "../components/SliderContainer";
 
@@ -21,6 +21,7 @@ const Netflix = () => {
 
   useEffect(() => {
     dispatch(getGenres());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -40,11 +41,13 @@ const Netflix = () => {
     <HeroContainer>
       <div className="hero">
         <TopNav isScrolled={isScrolled} />
+        {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
         <img
           className="background-image"
           src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/%E8%8A%B1%E6%9D%9F%E8%88%AC%E7%9A%84%E6%88%80%E6%84%9B-%E6%96%B0%E8%81%9E%E7%A8%BF%E5%8A%87%E7%85%A701-%E8%8A%B1%E6%9D%9F%E8%88%AC%E7%9A%84%E6%88%80%E6%84%9B-%E6%98%AF%E8%8F%85%E7%94%B0%E5%B0%87%E6%9A%89%E8%88%87%E6%9C%89%E6%9D%91%E6%9E%B6%E7%B4%94%E6%99%82%E9%A6%96%E6%AC%A1%E6%AD%A3%E5%BC%8F%E5%90%88%E4%BD%9C%E7%9A%84%E9%9B%BB%E5%BD%B1-1626763906.jpg"
           alt="hero image"
         />
+
         <div className="container">
           <div className="title">
             <h1>一場花束般的戀愛</h1>
@@ -87,6 +90,7 @@ const HeroContainer = styled.div`
           background: -webkit-linear-gradient(#ddd, rgb(256, 256, 256));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
         p {
           margin-bottom: -50px;
